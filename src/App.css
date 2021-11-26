@@ -2,6 +2,7 @@
 
 :root {
   --color-background: #F8F8FB;
+  --color-background-modal: #FFFFFF;
   --color1: #0C0E16;
   --color2: #888EB0;
   --color3: #7C5DFA;
@@ -19,11 +20,12 @@
   --color-paid-opacity: rgba(51, 214, 159, 0.06);
   --color-draft-opacity: rgba(55, 59, 83, 0.06);
   --color-draft: #373B53;
-
+  --color-border: #DFE3FA;
 }
 
 .dark {
   --color-background: #141625;
+  --color-background-modal: #141625;
   --color1: #FFFFFF;
   --color4: #DFE3FA;
   --color2: #DFE3FA;
@@ -37,6 +39,7 @@
   --color9: #FFFFFF;
   --color-draft-opacity: rgba(223, 227, 250, 0.06);
   --color-draft: #DFE3FA;
+  --color-border: #252945;
 
   background-color: var(--color-background);
   display: flex;
@@ -209,8 +212,8 @@
   margin-right: 13px;
 }
 
-.filter-content>div{
-  margin:8px 0 ;
+.filter-content>div {
+  margin: 8px 0;
 }
 
 /* .filter-pending {
@@ -276,7 +279,7 @@ a {
 }
 
 .id {
-  width: 60px;
+  width: 75px;
   margin-right: 45px;
   font-weight: bold;
   font-size: 12px;
@@ -300,7 +303,7 @@ a {
 }
 
 .author {
-  width: 120px;
+  width: 125px;
   margin-right: 38px;
   color: var(--color5);
   font-weight: 500;
@@ -310,7 +313,7 @@ a {
 }
 
 .price {
-  width: 110px;
+  width: 126px;
   margin-right: 40px;
   color: var(--color1);
   font-weight: bold;
@@ -793,7 +796,7 @@ a {
   width: 617px;
   max-width: 100%;
   padding: 56px;
-  background: var(--color6);
+  background: var(--color-background-modal);
   border-radius: 0px 20px 20px 0px;
 }
 
@@ -812,9 +815,10 @@ a {
   letter-spacing: -0.25px;
   color: var(--color1);
   padding: 15px 20px;
-  border: 1px solid #DFE3FA;
+  border: 1px solid var(--color-border);
   border-radius: 4px;
   margin-top: 10px;
+  background-color: var(--color6);
 }
 
 .nim-title {
@@ -984,11 +988,22 @@ a {
 }
 
 .item-list-total {
-  width: 55px;
+  width: 75px;
   margin-right: 30px;
-
 }
 
+.item-list-total-preview {
+  width: 90px;
+}
+
+
+.new-invoice-modal-content input::placeholder {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  color: var(--color1);
+}
 
 /*TABLET*/
 
@@ -1160,7 +1175,6 @@ a {
     margin-right: 0;
     margin-bottom: 24px;
     text-align: left;
-
   }
 
   .date {
@@ -1311,7 +1325,7 @@ a {
 
   .new-invoice-modal-content {
     margin-bottom: 72px;
-    border-radius:0px;
+    border-radius: 0px;
   }
 
 }

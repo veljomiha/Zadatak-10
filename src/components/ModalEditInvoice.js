@@ -8,20 +8,20 @@ const ModalEditInvoice = (props) => {
                         <div className="bill-form-title">Bill From</div>
                         <div className="bill-form-part1">
                             <label htmlFor="">Street Address</label>
-                            <input className="street-address-input" type="text"/>
+                            <input className="street-address-input" type="text" placeholder={props.data.senderAddress.street}/>
                         </div>
                         <div className="bill-form-part2">
                             <div>
                                 <label htmlFor="">City</label>
-                                <input type="text" />
+                                <input type="text"  placeholder={props.data.senderAddress.city}/>
                             </div>
                             <div className="post-code-div">
                                 <label  htmlFor="">Post Code</label>
-                                <input  type="text" />
+                                <input  type="text" placeholder={props.data.senderAddress.postCode}/>
                             </div>
                             <div>
                                 <label htmlFor="">Country</label>
-                                <input type="text" />
+                                <input type="text" placeholder={props.data.senderAddress.country}/>
                             </div>
                         </div>
                     </div>
@@ -29,28 +29,28 @@ const ModalEditInvoice = (props) => {
                         <div className="bill-to-title">Bill To</div>
                         <div className="bill-form-part1">
                             <label htmlFor="">Client's Name</label>
-                            <input className="street-address-input" type="text"/>
+                            <input className="street-address-input" type="text" placeholder={props.data.clientName}/>
                         </div>
                         <div className="bill-form-part1">
                             <label htmlFor="">Client's Email</label>
-                            <input className="street-address-input" type="text"/>
+                            <input className="street-address-input" type="text" placeholder={props.data.clientEmail}/>
                         </div>
                         <div className="bill-form-part1">
                             <label htmlFor="">Street Address</label>
-                            <input className="street-address-input" type="text"/>
+                            <input className="street-address-input" type="text" placeholder={props.data.clientAddress.street}/>
                         </div>
                         <div className="bill-form-part2">
                             <div>
                                 <label htmlFor="">City</label>
-                                <input type="text" />
+                                <input type="text" placeholder={props.data.clientAddress.city}/>
                             </div>
                             <div className="post-code-div">
                                 <label  htmlFor="">Post Code</label>
-                                <input  type="text" />
+                                <input  type="text" placeholder={props.data.clientAddress.postCode}/>
                             </div>
                             <div>
                                 <label htmlFor="">Country</label>
-                                <input type="text" />
+                                <input type="text" placeholder={props.data.clientAddress.country}/>
                             </div>
                         </div>
                         <div className="bill-to-part3">
@@ -60,9 +60,13 @@ const ModalEditInvoice = (props) => {
                             </div>
                             <div>
                                 <label htmlFor="">Payment Terms</label>
-                                <input type="text" />
+                                <input type="text" placeholder={props.data.paymentTerms}/>
                             </div>
                         </div>
+                    </div>
+                    <div className="bill-form-part1">
+                            <label htmlFor="">Project Description</label>
+                            <input className="street-address-input" type="text" placeholder={props.data.description}/>
                     </div>
                     <div className="form-item-list">
                         <div className="form-item-list-title">Item List</div>

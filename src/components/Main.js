@@ -11,13 +11,13 @@ const Main = (props) =>{
     const [newInvoiceModal, setNewInvoiceModal] = useState(false);
     const [filterMenu, setFilterMenu] = useState(false);
 
-    function openNewInvoiceModal(){
+    const openNewInvoiceModal = () =>{
         setNewInvoiceModal(true);
     }
-    function closeNewInvoiceModal(){
+    const closeNewInvoiceModal = () =>{
         setNewInvoiceModal(false);
     }
-    function openCloseFilterMenu(){
+    const openCloseFilterMenu = () =>{
         if(filterMenu === false){
             setFilterMenu(true);
         }
@@ -25,10 +25,9 @@ const Main = (props) =>{
             setFilterMenu(false);
         }
     }
-
     return(
     <div className="main">
-        {newInvoiceModal ? <ModalNewInvoice closeNewInvoiceModal={closeNewInvoiceModal}></ModalNewInvoice> : null}
+        {newInvoiceModal ? <ModalNewInvoice handleChangeItems={props.handleChangeItems} handleChangeClientAddress={props.handleChangeClientAddress} handleChangeSenderAddress={props.handleChangeSenderAddress} handleSubmit={props.handleSubmit} handleChange={props.handleChange} closeNewInvoiceModal={closeNewInvoiceModal}></ModalNewInvoice> : null}
         <div className="main-header">
             <div className="main-header--left-side">
                 <div className="main-header-title">Invoices</div>
@@ -50,7 +49,7 @@ const Main = (props) =>{
                         </div>
                     </div> : null}
                 </div>
-                <div className="new-invoice" onClick={openNewInvoiceModal}><div className="new-invoice-plus"><img src={imgPlus} alt="" /></div>New <span className="desktop-only"> Invoice</span></div>
+                <div className="new-invoice" onClick={openNewInvoiceModal}><div className="new-invoice-plus"><img src={imgPlus} alt="" /></div>New&nbsp;<span className="desktop-only">Invoice</span></div>
             </div>
         </div>
         <div>

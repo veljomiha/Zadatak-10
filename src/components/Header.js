@@ -7,7 +7,7 @@ import {useState} from "react"
 const Header = (props) =>{
     const [theme,setTheme] = useState(false);
 
-    function changeTheme(){
+    const changeTheme = () =>{
         if(theme === false){
             setTheme(true);
         }else{

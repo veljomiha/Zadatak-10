@@ -13,22 +13,22 @@ const InvoiceDetails = (props) =>{
     const [editInvoiceModal, setEditInvoiceModal] = useState(false);
     const history = useHistory();
 
-    function openDeleteModal(){
+    const openDeleteModal = () =>{
         setDeleteModal(true);
     }
 
-    function closeDeleteModal(){
+    const closeDeleteModal = () =>{
         setDeleteModal(false);
     }
     
-    function openEditInvoiceModal(){
+    const openEditInvoiceModal = () =>{
         setEditInvoiceModal(true);
     }
-    function closeEditInvoiceModal(){
+    const closeEditInvoiceModal = () =>{
         setEditInvoiceModal(false);
     }
 
-    function markAsPaid(){
+    const markAsPaid = () =>{
         if(data[0].status === "pending"){
             data[0].status = "paid";
             history.push(`/invoice-${data[0].id}`);
@@ -37,7 +37,7 @@ const InvoiceDetails = (props) =>{
 
     return(
         <div className="invoice-details">
-            {editInvoiceModal ? <ModalEditInvoice closeEditInvoiceModal={closeEditInvoiceModal} dataID={data[0].id}/> : null}
+            {editInvoiceModal ? <ModalEditInvoice closeEditInvoiceModal={closeEditInvoiceModal} data={data[0]} dataID={data[0].id}/> : null}
             {deleteModal ? <ModalDelete deleteItem={()=> props.deleteItem(id)} closeDeleteModal={closeDeleteModal} dataID={data[0].id}/> : null}
             <div className="go-back" >
                 <Link to={`/`} className="go-back">
@@ -108,7 +108,7 @@ const InvoiceDetails = (props) =>{
                         </div>
                         <div className="item-qty-value desktop-only">{item.quantity}</div>
                         <div className="item-price-value desktop-only">£ {item.price.toFixed(2)}</div>
-                        <div className="item-total-value">£ {item.total.toFixed(2)}</div>
+                        <div className="item-total-value">£ {item.total}</div> 
                     </div>
                     ))}
                     <div className="info-part33">
