@@ -71,13 +71,13 @@ const ModalNewInvoice = (props) => {
                     <div className="form-item-list">
                         <div className="form-item-list-title">Item List</div>
                         <div className="form-item-list-lbls">
-                            <div className="item-list-name">Item Name</div>
+                            <div className="item-list-name desktop-only">Item Name</div>
                             <div className="item-list-qty">Qty.</div>
                             <div className="item-list-price">Price</div>
                             <div className="item-list-total">Total</div>
                         </div>
                         <div className="form-item-list-lbls" handleChangeItems={props.handleChangeItems}>
-                            <input type="text" className="item-list-name" name="name" value={props.name}/>
+                            <input type="text" className="item-list-name desktop-only" name="name" value={props.name}/>
                             <input type="text" className="item-list-qty" name="quantity" value={props.quantity} />
                             <input type="text" className="item-list-price" name="price" value={props.price}/>
                             <label className="item-list-total item-list-total-preview" name="total" value={props.quantity * props.price}/>
